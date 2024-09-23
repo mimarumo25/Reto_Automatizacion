@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="7c101638e4383609af2d27abb9dccba683f40eb7afef4f60cce7ed790020fd22.html">Crear Clientes En La Aplicacion Siigo</a></span>
+                > <span class="truncate-60"><a
+                    href="d535848075bd6d0f6e74119bf0d8e6bf843e4d4ebe561a68f715ebe4af4b4701.html">Crear un nuevo cliente desde el formulario de crear clientes en Siigo testing </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 23-09-2024 00:56</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Crear Clientes En La Aplicacion Siigo </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="c68fd6639ab29c4b0ac02a78bc39f4e22557bcaa40ef14c903ac0e584626edfe.html">1 To 2 Minutes
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="9a16e4558ed645ae7e73835e8d06ced7517756a3b15e7acf5dc6d49daa9a7456.html">Caso Exitoso
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Crear un nuevo cliente desde el formulario de crear clientes en Siigo testing
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given el usuario inicia sesion en la aplicacion con las siguientes credenciales<br><table class='embedded'><thead><th>usuario</th><th>contrasena</th></thead><tbody><tr><td>&lt;usuario&gt;</td><td>&lt;contrasena&gt;</td></tr></tbody></table><br>And el usuario accede al formulario de creacion de cliente desde el menu<br>When el usuario llena el formulario de creacion de cliente con los siguientes datos:<br><table class='embedded'><thead><th>tipo</th><th>tipo_identificacion</th><th>identificacion</th><th>codigo_sucursal</th><th>nombres</th><th>apellidos</th><th>nombre_comercial</th><th>ciudad</th><th>direccion</th><th>telefono</th><th>correo_factura</th><th>nombre_contacto</th><th>correo_contacto</th><th>tipo_regimen_IVA</th><th>responsabilidad_fiscal</th><th>indicativo_factura</th><th>telefono_factura</th><th>codgo_postal_factura</th></thead><tbody><tr><td>&lt;tipo&gt;</td><td>&lt;tipo_identificacion&gt;</td><td>&lt;identificacion&gt;</td><td>&lt;codigo_sucursal&gt;</td><td>&lt;nombres&gt;</td><td>&lt;apellidos&gt;</td><td>&lt;nombre_comercial&gt;</td><td>&lt;ciudad&gt;</td><td>&lt;direccion&gt;</td><td>&lt;telefono&gt;</td><td>&lt;correo_factura&gt;</td><td>&lt;nombre_contacto&gt;</td><td>&lt;correo_contacto&gt;</td><td>&lt;tipo_regimen_IVA&gt;</td><td>&lt;responsabilidad_fiscal&gt;</td><td>&lt;indicativo_factura&gt;</td><td>&lt;telefono_factura&gt;</td><td>&lt;codgo_postal_factura&gt;</td></tr></tbody></table><br>And el usuario llena los datos de contacto con la siguiente informacion:<br><table class='embedded'><thead><th>nombre_contacto</th><th>apellidos_contacto</th><th>correo_contacto</th><th>cargo_contacto</th><th>indicativo_contacto</th><th>telefono_contacto</th></thead><tbody><tr><td>&lt;nombre_contacto&gt;</td><td>&lt;apellidos_contacto&gt;</td><td>&lt;correo_contacto&gt;</td><td>&lt;cargo_contacto&gt;</td><td>&lt;indicativo_contacto&gt;</td><td>&lt;telefono_contacto&gt;</td></tr></tbody></table><br>Then el sistema deberia mostrar los datos del nuevo cliente en pantalla  "&lt;nombres&gt;" y "&lt;apellidos&gt;"</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="22d75343a1e12f01da613d26c48b673c9702d4200bc593ffa2560697181331e3.png" title=" 1: Crear un nuevo cliente desde el formulario de crear clientes en Siigo testing ({usuario=admin@siigoautomationqa.com, contrasena=(#T0Nu@QrO, tipo=Es persona, tipo_identificacion=C&eacute;dula de ciudadan&iacute;a, identificacion=123456781, codigo_sucursal=1233900, nombres=Juan Antonio, apellidos=Perez Valencia, nombre_comercial=JAntonioValencia, ciudad=medellin, direccion=Calle Falsa 123, telefono=6011234567, correo_factura=micorreo@gmail.com, nombre_contacto=Juan Perez, correo_contacto=contacto@ejemplo.com, tipo_regimen_IVA=No responsable de IVA, responsabilidad_fiscal=R&eacute;gimen simple de tributaci&oacute;n, indicativo_factura=601, telefono_factura=6542485, codgo_postal_factura=5485398, apellidos_contacto=Perez, cargo_contacto=Gerente, indicativo_contacto=601, telefono_contacto=6542485})" width="0"/>
+                <img src="22d75343a1e12f01da613d26c48b673c9702d4200bc593ffa2560697181331e3.png" title=" Given el usuario inicia sesion en la aplicacion con las siguientes credenciales
+| usuario | contrasena |
+| admin@siigoautomationqa.com | (#T0Nu@QrO |" width="0"/>
+                <img src="22d75343a1e12f01da613d26c48b673c9702d4200bc593ffa2560697181331e3.png" title=" siigo opens the browser at https://qastaging.siigo.com/#/login" width="0"/>
+                <img src="22d75343a1e12f01da613d26c48b673c9702d4200bc593ffa2560697181331e3.png" title=" Siigo login task" width="0"/>
+                <img src="20328885ea4de1060eb5d2a002f6c788b7ca0356c0f7214d2914b8ce52836f33.png" title=" siigo enters 'admin@siigoautomationqa.com' into campo de texto para ingresar el usuario" width="0"/>
+                <img src="ff604a98811191e625e5b5499042415ce3dbb63c58a871466f7e2bac7ef65b52.png" title=" siigo enters 'admin@siigoautomationqa.com' into campo de texto para ingresar el usuario (completed)" width="0"/>
+                <img src="669e9c6208a16d52a64d89fd5f2c5f181169a18c83a29d08268e93d4c7a1df78.png" title=" siigo enters '(#T0Nu@QrO' into campo de texto para ingresar la contrase&ntilde;a" width="0"/>
+                <img src="8cbd5242244babf63fbcdcd6663491318e42be64c049695203c45f775b120cfb.png" title=" siigo enters '(#T0Nu@QrO' into campo de texto para ingresar la contrase&ntilde;a (completed)" width="0"/>
+                <img src="8cbd5242244babf63fbcdcd6663491318e42be64c049695203c45f775b120cfb.png" title=" siigo clicks on Boton para hacer login" width="0"/>
+                <img src="0b600f71ba4315b974d246db7548de1a3fb396cdf6a2f243b305eb1936caf395.png" title=" siigo clicks on Boton para hacer login (completed)" width="0"/>
+                <img src="96cc0bd15188eaee14244b11ab893c28079df0109dd1a4b1f33cbcd588ec337e.png" title=" Siigo login task (completed)" width="0"/>
+                <img src="b42f184a3f357505b85623f3597a44ca52a6fa1f5ea6567f39ffbd54bfc9bf5a.png" title=" Then validate login" width="0"/>
+                <img src="39ec389e3067a381d51463d7e88db811078716d3e3ce91cd2f57f703400bb715.png" title=" Then validate login (completed)" width="0"/>
+                <img src="39ec389e3067a381d51463d7e88db811078716d3e3ce91cd2f57f703400bb715.png" title=" Given el usuario inicia sesion en la aplicacion con las siguientes credenciales
+| usuario | contrasena |
+| admin@siigoautomationqa.com | (#T0Nu@QrO | (completed)" width="0"/>
+                <img src="39ec389e3067a381d51463d7e88db811078716d3e3ce91cd2f57f703400bb715.png" title=" And el usuario accede al formulario de creacion de cliente desde el menu" width="0"/>
+                <img src="39ec389e3067a381d51463d7e88db811078716d3e3ce91cd2f57f703400bb715.png" title=" Siigo navegar al formulario" width="0"/>
+                <img src="39ec389e3067a381d51463d7e88db811078716d3e3ce91cd2f57f703400bb715.png" title=" siigo clicks on Boton en el home para crear nuevos clientes" width="0"/>
+                <img src="924d4947dd4e86d70cd042ec041a76f10c00892cdeaee318d34ef1add73c095b.png" title=" siigo clicks on Boton en el home para crear nuevos clientes (completed)" width="0"/>
+                <img src="35ba52c0095958db18ad1ffb1416002203465bdd4fbf0919e280ecbbda264906.png" title=" siigo clicks on list-clients" width="0"/>
+                <img src="1f2169b142375a3687c98aaa8535e48725d3db68788c5552bdb2138bf554d1e9.png" title=" siigo clicks on list-clients (completed)" width="0"/>
+                <img src="89566c5168a5498dd72466658c9a37ef6c2c8eb8d1f5b9e9353357e77fa7d8c6.png" title=" Siigo navegar al formulario (completed)" width="0"/>
+                <img src="0b21ba167e7cd7887ff29d346a2a3c63d622321103a8e538382b538742b70b63.png" title=" And el usuario accede al formulario de creacion de cliente desde el menu (completed)" width="0"/>
+                <img src="0b21ba167e7cd7887ff29d346a2a3c63d622321103a8e538382b538742b70b63.png" title=" When el usuario llena el formulario de creacion de cliente con los siguientes datos:
+| tipo | tipo_identificacion | identificacion | codigo_sucursal | nombres | apellidos | nombre_comercial | ciudad | direccion | telefono | correo_factura | nombre_contacto | correo_contacto | tipo_regimen_IVA | responsabilidad_fiscal | indicativo_factura | telefono_factura | codgo_postal_factura |
+| Es persona | C&eacute;dula de ciudadan&iacute;a | 123456781 | 1233900 | Juan Antonio | Perez Valencia | JAntonioValencia | medellin | Calle Falsa 123 | 6011234567 | micorreo@gmail.com | Juan Perez | contacto@ejemplo.com | No responsable de IVA | R&eacute;gimen simple de tributaci&oacute;n | 601 | 6542485 | 5485398 |" width="0"/>
+                <img src="09273920f25da4cdb924bf1c968999c8fa9cee849565c354102a1c74a3748619.png" title=" Siigo diligenciar formulario clientes task" width="0"/>
+                <img src="09273920f25da4cdb924bf1c968999c8fa9cee849565c354102a1c74a3748619.png" title=" siigo clicks on Select para escoger el tipo de persona" width="0"/>
+                <img src="73a8f7d8b159fbf61963227f2f4bb3d37d12cd92395016aff5b34814925203f0.png" title=" siigo clicks on Select para escoger el tipo de persona (completed)" width="0"/>
+                <img src="73a8f7d8b159fbf61963227f2f4bb3d37d12cd92395016aff5b34814925203f0.png" title=" Siigo select from list" width="0"/>
+                <img src="43a9ab72f4efbd4adcc3661224ceea775d8e3ae9db1c27aac9a07d748441d16c.png" title=" Siigo select from list (completed)" width="0"/>
+                <img src="43a9ab72f4efbd4adcc3661224ceea775d8e3ae9db1c27aac9a07d748441d16c.png" title=" siigo clicks on Select para escoger el tipo de identificacion" width="0"/>
+                <img src="69c0ff3413a1a8a331b8a121b171992f252c1fc3eb35a1732ace383e4dc126b6.png" title=" siigo clicks on Select para escoger el tipo de identificacion (completed)" width="0"/>
+                <img src="69c0ff3413a1a8a331b8a121b171992f252c1fc3eb35a1732ace383e4dc126b6.png" title=" Siigo select from list" width="0"/>
+                <img src="74cddcf8819f33cb9d9e925afef6366fbda276c9b8016caf92061aca494fc313.png" title=" Siigo select from list (completed)" width="0"/>
+                <img src="74cddcf8819f33cb9d9e925afef6366fbda276c9b8016caf92061aca494fc313.png" title=" siigo enters '123456781' into Input para ingresar la identificacion del cliente " width="0"/>
+                <img src="168c5854891ae91c44b37fcb7faad4a59b80a95c108168746c6064a31dc6690c.png" title=" siigo enters '123456781' into Input para ingresar la identificacion del cliente  (completed)" width="0"/>
+                <img src="168c5854891ae91c44b37fcb7faad4a59b80a95c108168746c6064a31dc6690c.png" title=" siigo enters '1233900' into Input para ingresar el codigo de sucursal" width="0"/>
+                <img src="8db850d3da9b2aabf0b65f467d0775f665591b14eefa09abd2bc622a1fafe7b2.png" title=" siigo enters '1233900' into Input para ingresar el codigo de sucursal (completed)" width="0"/>
+                <img src="8db850d3da9b2aabf0b65f467d0775f665591b14eefa09abd2bc622a1fafe7b2.png" title=" siigo enters 'Juan Antonio' into Input para ingresar el nombre del cliente " width="0"/>
+                <img src="77ac0b3b3af4176d38a7b2f5fa6a165839a16bb9fdd1d43018968fceb69b52f2.png" title=" siigo enters 'Juan Antonio' into Input para ingresar el nombre del cliente  (completed)" width="0"/>
+                <img src="77ac0b3b3af4176d38a7b2f5fa6a165839a16bb9fdd1d43018968fceb69b52f2.png" title=" siigo enters 'Perez Valencia' into Input para ingresar el apellido del cliente " width="0"/>
+                <img src="ca72d087a05695a0352ec68883c4a4fb400ac0324c50dfc5585c1f208462574e.png" title=" siigo enters 'Perez Valencia' into Input para ingresar el apellido del cliente  (completed)" width="0"/>
+                <img src="ca72d087a05695a0352ec68883c4a4fb400ac0324c50dfc5585c1f208462574e.png" title=" siigo enters 'JAntonioValencia' into Input para ingresar el nombre comercial" width="0"/>
+                <img src="7eec27d9c4fb7d2f0382d16943c51e2279db1ab40a5ee4d1d3f4028d4e80d50b.png" title=" siigo enters 'JAntonioValencia' into Input para ingresar el nombre comercial (completed)" width="0"/>
+                <img src="7eec27d9c4fb7d2f0382d16943c51e2279db1ab40a5ee4d1d3f4028d4e80d50b.png" title=" siigo enters 'Calle Falsa 123' into Input para ingresar la direcci&oacute;n del cliente" width="0"/>
+                <img src="308fe5ed9620537f5e8b89c8677ac8836d79f079463aa6d1f2ad6381e2111605.png" title=" siigo enters 'Calle Falsa 123' into Input para ingresar la direcci&oacute;n del cliente (completed)" width="0"/>
+                <img src="308fe5ed9620537f5e8b89c8677ac8836d79f079463aa6d1f2ad6381e2111605.png" title=" siigo enters 'contacto@ejemplo.com' into input para correo de facturaccion" width="0"/>
+                <img src="7225b1962fbb28bafb1e7bed798463de5a151e6fb710b86a4a6281758a450223.png" title=" siigo enters 'contacto@ejemplo.com' into input para correo de facturaccion (completed)" width="0"/>
+                <img src="7225b1962fbb28bafb1e7bed798463de5a151e6fb710b86a4a6281758a450223.png" title=" siigo enters '6011234567' into Input para ingresar el tel&eacute;fono del cliente" width="0"/>
+                <img src="088ea6adafdbad8361bac4806521d30ac187445b38cbf462c7573162dba1b563.png" title=" siigo enters '6011234567' into Input para ingresar el tel&eacute;fono del cliente (completed)" width="0"/>
+                <img src="088ea6adafdbad8361bac4806521d30ac187445b38cbf462c7573162dba1b563.png" title=" siigo clicks on Select para escoger el tipo de r&eacute;gimen IVA" width="0"/>
+                <img src="f2c69428f614780f545926838198bc00d52d523e0a245a43067811d631b8305e.png" title=" siigo clicks on Select para escoger el tipo de r&eacute;gimen IVA (completed)" width="0"/>
+                <img src="f2c69428f614780f545926838198bc00d52d523e0a245a43067811d631b8305e.png" title=" Siigo select from list" width="0"/>
+                <img src="b9b1b3f52af5f1e126fa1b2a350837e97f3e505bd5c764807489d81e93eb3024.png" title=" Siigo select from list (completed)" width="0"/>
+                <img src="b9b1b3f52af5f1e126fa1b2a350837e97f3e505bd5c764807489d81e93eb3024.png" title=" siigo enters '601' into input indicativo telefono facturaccion" width="0"/>
+                <img src="55bb85871372e26cb48054cc20637a8e3e3c9d925f533777c2bc94aefeadfa7d.png" title=" siigo enters '601' into input indicativo telefono facturaccion (completed)" width="0"/>
+                <img src="55bb85871372e26cb48054cc20637a8e3e3c9d925f533777c2bc94aefeadfa7d.png" title=" siigo enters '6542485' into input indicativo telefono facturaccion" width="0"/>
+                <img src="824ffa84c036684d8a32e68dfdbd1dddf818d5eb052752d51e8b6d59c30acb7c.png" title=" siigo enters '6542485' into input indicativo telefono facturaccion (completed)" width="0"/>
+                <img src="824ffa84c036684d8a32e68dfdbd1dddf818d5eb052752d51e8b6d59c30acb7c.png" title=" siigo enters '5485398' into input para codigo de facturaccion" width="0"/>
+                <img src="b454248db250696b4ed6bba9711b078bcc510ee57aa8c28305bbf2003093ed12.png" title=" siigo enters '5485398' into input para codigo de facturaccion (completed)" width="0"/>
+                <img src="b454248db250696b4ed6bba9711b078bcc510ee57aa8c28305bbf2003093ed12.png" title=" siigo clicks on Select para escoger la responsabilidad fiscal" width="0"/>
+                <img src="862f21367f390e572a1cd5a83d67a9f63c591730ff52ce137062d25ebb77e422.png" title=" siigo clicks on Select para escoger la responsabilidad fiscal (completed)" width="0"/>
+                <img src="862f21367f390e572a1cd5a83d67a9f63c591730ff52ce137062d25ebb77e422.png" title=" Siigo diligenciar formulario clientes task (completed)" width="0"/>
+                <img src="862f21367f390e572a1cd5a83d67a9f63c591730ff52ce137062d25ebb77e422.png" title=" When el usuario llena el formulario de creacion de cliente con los siguientes datos:
+| tipo | tipo_identificacion | identificacion | codigo_sucursal | nombres | apellidos | nombre_comercial | ciudad | direccion | telefono | correo_factura | nombre_contacto | correo_contacto | tipo_regimen_IVA | responsabilidad_fiscal | indicativo_factura | telefono_factura | codgo_postal_factura |
+| Es persona | C&eacute;dula de ciudadan&iacute;a | 123456781 | 1233900 | Juan Antonio | Perez Valencia | JAntonioValencia | medellin | Calle Falsa 123 | 6011234567 | micorreo@gmail.com | Juan Perez | contacto@ejemplo.com | No responsable de IVA | R&eacute;gimen simple de tributaci&oacute;n | 601 | 6542485 | 5485398 | (completed)" width="0"/>
+                <img src="862f21367f390e572a1cd5a83d67a9f63c591730ff52ce137062d25ebb77e422.png" title=" And el usuario llena los datos de contacto con la siguiente informacion:
+| nombre_contacto | apellidos_contacto | correo_contacto | cargo_contacto | indicativo_contacto | telefono_contacto |
+| Juan Perez | Perez | contacto@ejemplo.com | Gerente | 601 | 6542485 |" width="0"/>
+                <img src="a0a4faef19e4c71bc7ee0af2236d52e6835ce645e184c7e8d15cc05009399bab.png" title=" Siigo digilgenciar dato contacto task" width="0"/>
+                <img src="a0a4faef19e4c71bc7ee0af2236d52e6835ce645e184c7e8d15cc05009399bab.png" title=" siigo clicks on label para datos de contactos" width="0"/>
+                <img src="5e1dfbba74ec77098403f2917ff63ced3648ac894dbad976b698b33646666e43.png" title=" siigo clicks on label para datos de contactos (completed)" width="0"/>
+                <img src="5e1dfbba74ec77098403f2917ff63ced3648ac894dbad976b698b33646666e43.png" title=" siigo enters 'Juan Perez' into input para el nombre de contacto" width="0"/>
+                <img src="84527b94c5a640798bd3cc946a5585aaea84138d96217ee330ee210657f2c699.png" title=" siigo enters 'Juan Perez' into input para el nombre de contacto (completed)" width="0"/>
+                <img src="84527b94c5a640798bd3cc946a5585aaea84138d96217ee330ee210657f2c699.png" title=" siigo enters 'Perez' into Input para ingresar el apellido de contacto" width="0"/>
+                <img src="81e9269afc54fba29588f79d302ac958011a7d68b725470cb24f8434b36c6fe0.png" title=" siigo enters 'Perez' into Input para ingresar el apellido de contacto (completed)" width="0"/>
+                <img src="81e9269afc54fba29588f79d302ac958011a7d68b725470cb24f8434b36c6fe0.png" title=" siigo enters 'contacto@ejemplo.com' into Input para ingresar el correo de contacto" width="0"/>
+                <img src="d87772c55f1832163dd1686b3a27c0911fe2be3a55b4f3d14e530ddc425109f6.png" title=" siigo enters 'contacto@ejemplo.com' into Input para ingresar el correo de contacto (completed)" width="0"/>
+                <img src="d87772c55f1832163dd1686b3a27c0911fe2be3a55b4f3d14e530ddc425109f6.png" title=" siigo enters 'Gerente' into Input para ingresar el correo de contacto" width="0"/>
+                <img src="a2aba6a0faf175d2b6af71c6c02756b94ff6d2f41bba4dbdff4afe500f378cde.png" title=" siigo enters 'Gerente' into Input para ingresar el correo de contacto (completed)" width="0"/>
+                <img src="a2aba6a0faf175d2b6af71c6c02756b94ff6d2f41bba4dbdff4afe500f378cde.png" title=" siigo enters '601' into Input para ingresar el correo de contacto" width="0"/>
+                <img src="0b24f25d6e6b821d4a16ee40ce8b2b5adb5fde8cc42c9b3c69f476a1db872fb3.png" title=" siigo enters '601' into Input para ingresar el correo de contacto (completed)" width="0"/>
+                <img src="0b24f25d6e6b821d4a16ee40ce8b2b5adb5fde8cc42c9b3c69f476a1db872fb3.png" title=" siigo enters '6542485' into Input para ingresar el correo de contacto" width="0"/>
+                <img src="3c35484784dd65b84132089417267b944c79844f98571c5fd50c65a1dcadc295.png" title=" siigo enters '6542485' into Input para ingresar el correo de contacto (completed)" width="0"/>
+                <img src="3c35484784dd65b84132089417267b944c79844f98571c5fd50c65a1dcadc295.png" title=" siigo clicks on botne para guardar el formulario de clientes " width="0"/>
+                <img src="54cae51bebcf2b5e2966f7ea16259e1152facbe1f99fe913ba6c422f045416e7.png" title=" siigo clicks on botne para guardar el formulario de clientes  (completed)" width="0"/>
+                <img src="54cae51bebcf2b5e2966f7ea16259e1152facbe1f99fe913ba6c422f045416e7.png" title=" Siigo digilgenciar dato contacto task (completed)" width="0"/>
+                <img src="54cae51bebcf2b5e2966f7ea16259e1152facbe1f99fe913ba6c422f045416e7.png" title=" And el usuario llena los datos de contacto con la siguiente informacion:
+| nombre_contacto | apellidos_contacto | correo_contacto | cargo_contacto | indicativo_contacto | telefono_contacto |
+| Juan Perez | Perez | contacto@ejemplo.com | Gerente | 601 | 6542485 | (completed)" width="0"/>
+                <img src="54cae51bebcf2b5e2966f7ea16259e1152facbe1f99fe913ba6c422f045416e7.png" title=" Then el sistema deberia mostrar los datos del nuevo cliente en pantalla  &quot;Juan Antonio&quot; y &quot;Perez Valencia&quot;" width="0"/>
+                <img src="3726260d402b8171c0c28aa25d7460205b9730901d87e5ec349e56ec45c31b28.png" title=" Then validacion clientes should be 'Juan Antonio Perez Valencia'" width="0"/>
+                <img src="608fbc4b71b2bb944abff180753bf4fdeb8bbdcd6741c1e22c5d8792b5b4ca9b.png" title=" Then validacion clientes should be 'Juan Antonio Perez Valencia' (completed)" width="0"/>
+                <img src="608fbc4b71b2bb944abff180753bf4fdeb8bbdcd6741c1e22c5d8792b5b4ca9b.png" title=" Then el sistema deberia mostrar los datos del nuevo cliente en pantalla  &quot;Juan Antonio&quot; y &quot;Perez Valencia&quot; (completed)" width="0"/>
+
+                <img src="608fbc4b71b2bb944abff180753bf4fdeb8bbdcd6741c1e22c5d8792b5b4ca9b.png" title=" 1: Crear un nuevo cliente desde el formulario de crear clientes en Siigo testing ({usuario=admin@siigoautomationqa.com, contrasena=(#T0Nu@QrO, tipo=Es persona, tipo_identificacion=Cédula de ciudadanía, identificacion=123456781, codigo_sucursal=1233900, nombres=Juan Antonio, apellidos=Perez Valencia, nombre_comercial=JAntonioValencia, ciudad=medellin, direccion=Calle Falsa 123, telefono=6011234567, correo_factura=micorreo@gmail.com, nombre_contacto=Juan Perez, correo_contacto=contacto@ejemplo.com, tipo_regimen_IVA=No responsable de IVA, responsabilidad_fiscal=Régimen simple de tributación, indicativo_factura=601, telefono_factura=6542485, codgo_postal_factura=5485398, apellidos_contacto=Perez, cargo_contacto=Gerente, indicativo_contacto=601, telefono_contacto=6542485}) (completed): <span class='success-color'>SUCCESS</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.0.19</span>
+</div>
+</body>
+</html>
