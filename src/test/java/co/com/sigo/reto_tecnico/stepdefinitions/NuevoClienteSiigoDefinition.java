@@ -55,7 +55,7 @@ public class NuevoClienteSiigoDefinition {
     }
 
     @Then("el sistema deberia mostrar los datos del nuevo cliente en pantalla  {string} y {string}")
-    public void elSistemaDeberiaMostrarLosDatosDelNuevoClienteEnPantallaNombresYApellidos(String nombres , String apellidos) {
+    public void elSistemaDeberiaMostrarLosDatosDelNuevoClienteEnPantallaNombresYApellidos(String nombres, String apellidos) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(
                 ValidacionClientes.valida(), equalTo(nombres + " " + apellidos))
         );

@@ -1,18 +1,15 @@
 package co.com.sigo.reto_tecnico.tasks;
 
-import co.com.sigo.reto_tecnico.interactions.GetShadowDomText;
+
 import co.com.sigo.reto_tecnico.interactions.SelectFromList;
 import co.com.sigo.reto_tecnico.models.DataUsuario;
 import co.com.sigo.reto_tecnico.userinterfaces.FormularioClientesPage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import org.openqa.selenium.By;
+
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -39,11 +36,9 @@ public class DiligenciarFormularioClientesTask implements Task {
                 Enter.theValue(dataUsuario.getNombres()).into(FormularioClientesPage.INPUT_NOMBRE),
                 Enter.theValue(dataUsuario.getApellidos()).into(FormularioClientesPage.INPUT_APELLIDO),
                 Enter.theValue(dataUsuario.getNombre_comercial()).into(FormularioClientesPage.INPUT_NOMBRE_COMERCIAL),
-                //GetShadowDomText.fromShadowHost(By.cssSelector("siigo-autocomplete-web[key-id='city']"), By.cssSelector("input")),
-                // WaitUntil.the(FormularioClientesPage.INPUT_CIUDAD, WebElementStateMatchers.isVisible())
-                //         .forNoMoreThan(10).seconds(),
-                // Enter.theValue(dataUsuario.getCiudad()).into(FormularioClientesPage.INPUT_CIUDAD),
-                //SelectFromList.on(FormularioClientesPage.CONTAINER_CYTIES, dataUsuario.getCiudad(),"td"),
+                Click.on(FormularioClientesPage.LBL_CIUDAD),
+                Enter.theValue(dataUsuario.getCiudad()).into(FormularioClientesPage.INPUT_CIUDAD),
+                SelectFromList.on(FormularioClientesPage.CONTAINER_CITIES, dataUsuario.getCiudad(),"div"),
                 Enter.theValue(dataUsuario.getDireccion()).into(FormularioClientesPage.INPUT_DIRECCION),
                 Enter.theValue(dataUsuario.getCorreo_contacto()).into(FormularioClientesPage.INPUT_CORREO),
                 Enter.theValue(dataUsuario.getTelefono()).into(FormularioClientesPage.INPUT_TELEFONO),
@@ -55,7 +50,6 @@ public class DiligenciarFormularioClientesTask implements Task {
                 Click.on(FormularioClientesPage.SELECT_RESPONSABILIDAD_FISCAL.of(dataUsuario.getResponsabilidad_fiscal()))
 
         );
-
     }
 
 }
